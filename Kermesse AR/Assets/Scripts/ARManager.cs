@@ -43,7 +43,7 @@ public class ARManager : MonoBehaviour
 
         // Si tienes 4 objetos, cada paso es de 90 grados. 
         // Usamos 360 / cantidad de objetos para que sea dinámico.
-        targetRotationZ -= 360f / allGames.Count;
+        targetRotationZ += 360f / allGames.Count;
     }
 
     public void PreviousGame()
@@ -52,6 +52,11 @@ public class ARManager : MonoBehaviour
         if (indexGame < 0)
             indexGame = allGames.Count - 1;
 
-        targetRotationZ += 360f / allGames.Count;
+        targetRotationZ -= 360f / allGames.Count;
+    }
+
+    public void GoRepo()
+    {
+        Application.OpenURL("https://github.com/Rodrihollone2004/Vuforia-Proyect#");
     }
 }
